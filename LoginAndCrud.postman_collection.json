@@ -4,7 +4,7 @@
 		"name": "LoginAndCrud",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "17591969",
-		"_collection_link": "https://blue-crater-342159.postman.co/workspace/My-Workspace~1dbc23ae-95c6-4ac0-8d0b-1e416c155a79/collection/17591969-cf70e0fc-02d5-4974-82d1-19547327f7eb?action=share&source=collection_link&creator=17591969"
+		"_collection_link": "https://blue-crater-342159.postman.co/workspace/NCBP-Workspace~1dbc23ae-95c6-4ac0-8d0b-1e416c155a79/collection/17591969-cf70e0fc-02d5-4974-82d1-19547327f7eb?action=share&source=collection_link&creator=17591969"
 	},
 	"item": [
 		{
@@ -27,7 +27,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Task 2\",\r\n    \"description\": \"Second task\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Task 2\",\r\n    \"description\": \"First task\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -105,7 +105,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/tasks/65ce60c72066a9238986998a",
+							"raw": "http://localhost:5000/api/tasks/65d0efe6d20da75e43303cde",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -114,7 +114,7 @@
 							"path": [
 								"api",
 								"tasks",
-								"65ce60c72066a9238986998a"
+								"65d0efe6d20da75e43303cde"
 							]
 						}
 					},
@@ -184,49 +184,10 @@
 			]
 		},
 		{
-			"name": "Book",
+			"name": "User",
 			"item": [
 				{
-					"name": "createBook",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"isbn\": \"un_1234\",\r\n    \"name\": \"harry potter\",\r\n    \"genre\": \"fiction\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:5000/api/books",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"api",
-								"books"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "updateBook",
+					"name": "updateUser",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -250,7 +211,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/books/65ce6387ed08ba45d76100cd",
+							"raw": "http://localhost:5000/api/users/65ce6387ed08ba45d76100cd",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -258,7 +219,7 @@
 							"port": "5000",
 							"path": [
 								"api",
-								"books",
+								"users",
 								"65ce6387ed08ba45d76100cd"
 							]
 						}
@@ -266,7 +227,7 @@
 					"response": []
 				},
 				{
-					"name": "deleteBook",
+					"name": "deleteUser",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -281,7 +242,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/books/65ce6387ed08ba45d76100cd",
+							"raw": "http://localhost:5000/api/users/65ce595c42fba0f6554d99a8",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -289,15 +250,15 @@
 							"port": "5000",
 							"path": [
 								"api",
-								"books",
-								"65ce6387ed08ba45d76100cd"
+								"users",
+								"65ce595c42fba0f6554d99a8"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "getAllBooks",
+					"name": "getUser",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -312,7 +273,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/books",
+							"raw": "http://localhost:5000/api/users/65d0ef30400361a0c5a4b920",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -320,38 +281,8 @@
 							"port": "5000",
 							"path": [
 								"api",
-								"books"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getBookByIsbn",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:5000/api/books/un_1234",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"api",
-								"books",
-								"un_1234"
+								"users",
+								"65d0ef30400361a0c5a4b920"
 							]
 						}
 					},

@@ -6,7 +6,7 @@ const connectDB = require("./config/db");
 const authRouter = require("./routes/auth");
 
 const taskRouter = require("./routes/task");
-const bookRouter = require("./routes/book");
+const userRouter = require("./routes/user");
 const authenticate = require("./middleware/authMiddleware");
 
 const app = express();
@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/auth", authRouter);
+app.use("/api/users", authenticate, userRouter);
 app.use("/api/tasks", authenticate, taskRouter);
-app.use("/api/books", authenticate, bookRouter);
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

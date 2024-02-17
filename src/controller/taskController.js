@@ -12,6 +12,9 @@ const createTask = async (req, res, next) => {
     }
 
     const task = await Task.create({ name, description, owner: req.user._id });
+    req.user.tasks.push(task._id);
+
+    await req.user.save();
     res.status(200).json({
       success: true,
       message: "Task created successfully",
@@ -94,6 +97,12 @@ const deleteTask = async (req, res, next) => {
         .status(400)
         .json({ success: false, message: "Task not found" });
     }
+
+    req.user.tasks = req.user.tasks.filter(
+      (taskId) => taskId.toString() !== req.params.id
+    );
+
+    await req.user.save();
     res.status(200).json({
       success: true,
       message: "Task deleted successfully",
